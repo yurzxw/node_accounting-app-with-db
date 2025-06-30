@@ -106,7 +106,7 @@ function createServer() {
     }
 
     if (!spentAt && !title && !amount && !category && !note) {
-      return res.status(404).send('Bad request');
+      return res.status(400).send('Bad request');
     }
 
     const expense = await expensesService.updateExpense(
