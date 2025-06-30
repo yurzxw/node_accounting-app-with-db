@@ -19,7 +19,10 @@ function createServer() {
     }
 
     if (categories) {
-      expenses = expenses.filter((e) => categories.includes(e.category));
+      const categoriesArray = categories.split(',').map((cat) => cat.trim());
+
+      // Тепер використовуйте отриманий масив для фільтрації
+      expenses = expenses.filter((e) => categoriesArray.includes(e.category));
     }
 
     if (from) {
